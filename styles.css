@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-basis: 700px;
     width: 500px;
+    border-radius: 20px;
     background-color: #090614;
 }
 
