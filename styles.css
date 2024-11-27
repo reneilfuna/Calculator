@@ -4,5 +4,24 @@ html {
 
 body {
     height: 100%;
-    background-color: paleturquoise;
+    background-color: #A8E1F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+
+#header,
+#footer {
+    display: flex;
+    width: 100%;
+    flex-basis: 200px;
+}
+
+#header {
+    background-color: #240B6E;
+}
+
+#footer {
+    background-color: #1D0B4F;
 }
