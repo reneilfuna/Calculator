@@ -82,4 +82,5 @@ const btnContents = ["C", "+/-", "%", "\xf7",
 const buttonList = document.querySelectorAll(".button");
 for(i=0; i<buttonList.length; i++){
     buttonList[i].textContent = btnContents[i];
+    buttonList[i].setAttribute("id", `${btnContents[i]}`)
 }
