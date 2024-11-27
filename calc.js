@@ -26,3 +26,19 @@ function divide(val1, val2){
     else if (val2 == 0) return "jokeman";
     else return (val1 / val2);
 }
+
+// Calculator function consists of a number, an operator and 
+// another number
+
+let num1;
+let operator;
+let num2;
+
+// Operate function takes an operator, two numbers and calls the 
+// operator on the two numbers
+
+function operate(val1, oper, val2){
+    return oper(val1, val2);
+}
+
+console.log(operate(add, 3, 7));
