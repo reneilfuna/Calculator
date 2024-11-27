@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     margin: 0;
 }
 
@@ -15,11 +16,18 @@ body {
 #footer {
     display: flex;
     width: 100%;
-    flex-basis: 150px;
+    flex-basis: 90px;
 }
 
 #header {
     background-color: #240B6E;
+}
+
+#container {
+    display: flex;
+    flex-basis: 500px;
+    width: 300px;
+    background-color: #090614;
 }
 
 #footer {
