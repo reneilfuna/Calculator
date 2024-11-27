@@ -26,17 +26,25 @@ body {
 #container {
     display: flex;
     flex-direction: column;
-    flex-basis: 700px;
+    flex-basis: 600px;
     align-items: center;
-    width: 500px;
+    width: 450px;
     border-radius: 20px;
+    padding: 10px;
     background-color: #090614;
 }
 
 #display {
-    width: 90%;
+    width: 98%;
     flex: 1 0 100px;
+    border-radius: 10px;
+    margin: 4px 4px;
     background-color: #A8E1F5;
+}
+
+#buttons {
+    width: 98%;
+    flex: 4 0 500px;
 }
 
 #footer {
