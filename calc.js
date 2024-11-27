@@ -70,3 +70,15 @@ for (i=0; i<4; i++) {
     btnContainer.appendChild(buttonRow);
     console.log("row appended!");
 }
+
+const btnContents = ["C", "+/-", "%", "\xf7",
+    "7", "8", "9", "x",
+    "4", "5", "6", "-",
+    "1", "2", "3", "+",
+    "0", ".", "="
+];
+
+const buttonList = document.querySelectorAll(".button");
+for(i=0; i<buttonList.length; i++){
+    buttonList[i].textContent = btnContents[i];
+}
