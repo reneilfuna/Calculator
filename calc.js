@@ -46,12 +46,13 @@ function operate(val1, oper, val2){
 
 const btnContainer = document.getElementById("buttons");
 
-for (i=0; i<4; i++) {
+for (i=0; i<3; i++) {
     const buttonRow = document.createElement("div");
     buttonRow.classList.add("rowOfButtons");
     for (j=0; j<4; j++){
         const btn = document.createElement("div");
         btn.classList.add("button");
+        if (j==3) btn.classList.add("end");
         buttonRow.appendChild(btn);
     }
     btnContainer.appendChild(buttonRow);
