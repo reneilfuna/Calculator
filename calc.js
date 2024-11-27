@@ -49,6 +49,11 @@ const btnContainer = document.getElementById("buttons");
 for (i=0; i<4; i++) {
     const buttonRow = document.createElement("div");
     buttonRow.classList.add("rowOfButtons");
+    for (j=0; j<4; j++){
+        const btn = document.createElement("div");
+        btn.classList.add("button");
+        buttonRow.appendChild(btn);
+    }
     btnContainer.appendChild(buttonRow);
     console.log("row appended!");
 }
