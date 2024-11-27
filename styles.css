@@ -60,11 +60,15 @@ body {
 }
 
 .button {
+    display: flex;
     height: 100%;
     width: 25%;
     border-radius: 10px;
     margin-inline: 4px;
+    justify-content: center;
+    align-items: center;
     background-color: #1D0B4F;
+    color: ivory;
 }
 
 .button.zero {
