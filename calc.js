@@ -84,3 +84,36 @@ for(i=0; i<buttonList.length; i++){
     buttonList[i].textContent = btnContents[i];
     buttonList[i].setAttribute("id", `${btnContents[i]}`)
 }
+
+btnContainer.addEventListener("click", (event) => {
+    let target = event.target;
+    switch (target.textContent){
+        case "C":
+            console.log("CLEAR THE AREA!!!");
+            break;
+        case "+/-":
+            console.log("CHANGE SIGN BRO");
+            break;
+        case "%":
+            console.log("ALL ABOUT THE PERCENTAGES");
+            break;
+        case "\xf7":
+            console.log("DOGGY GAME I NEVER WANTED");
+            break;
+        // case "C":
+        //     console.log("CLEAR THE AREA!!!");
+        // case "C":
+        //     console.log("CLEAR THE AREA!!!");
+        // case "C":
+        //     console.log("CLEAR THE AREA!!!");
+        // case "C":
+        //     console.log("CLEAR THE AREA!!!");
+        // case "C":
+        //     console.log("CLEAR THE AREA!!!");
+        // case "C":
+        //     console.log("CLEAR THE AREA!!!");
+        // case "C":
+        //     console.log("CLEAR THE AREA!!!");
+    }
+});                                                               
+        
