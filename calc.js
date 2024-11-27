@@ -40,5 +40,3 @@ let num2;
 function operate(val1, oper, val2){
     return oper(val1, val2);
 }
-
-console.log(operate(add, 3, 7));
