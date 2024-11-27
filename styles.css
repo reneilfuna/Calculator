@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 html {
     height: 100%;
 }
@@ -70,6 +72,12 @@ body {
     background-color: #1D0B4F;
     color: ivory;
     font-size: 40px;
+    font-family: "roboto";
+}
+
+.button.top {
+    background-color: #E3F5FA;
+    color: #0E0824;
 }
 
 .button.zero {
