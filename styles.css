@@ -76,6 +76,10 @@ body {
     width: 50%;
 }
 
+.button.end {
+    background-color: #1F63E8;
+}
+
 #footer {
     background-color: #1D0B4F;
 }
