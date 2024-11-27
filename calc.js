@@ -46,14 +46,26 @@ function operate(val1, oper, val2){
 
 const btnContainer = document.getElementById("buttons");
 
-for (i=0; i<3; i++) {
+for (i=0; i<4; i++) {
     const buttonRow = document.createElement("div");
     buttonRow.classList.add("rowOfButtons");
-    for (j=0; j<4; j++){
-        const btn = document.createElement("div");
-        btn.classList.add("button");
-        if (j==3) btn.classList.add("end");
-        buttonRow.appendChild(btn);
+
+    if (i==3){
+        for(j=0; j<3; j++){
+            const btn = document.createElement("div");
+            btn.classList.add("button");
+            if (j==0) btn.classList.add("zero");
+            if (j==2) btn.classList.add("end");
+            buttonRow.appendChild(btn);
+        }
+    }
+    else {
+        for (j=0; j<4; j++){
+            const btn = document.createElement("div");
+            btn.classList.add("button");
+            if (j==3) btn.classList.add("end");
+            buttonRow.appendChild(btn);
+        }
     }
     btnContainer.appendChild(buttonRow);
     console.log("row appended!");
