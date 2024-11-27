@@ -64,7 +64,7 @@ for (i=0; i<5; i++) {
             const btn = document.createElement("div");
             btn.classList.add("button");
             if (j==3) btn.classList.add("end");
-            else btn.classList.add("top");
+            else if (i==0)btn.classList.add("top");
             buttonRow.appendChild(btn);
         }
     }
