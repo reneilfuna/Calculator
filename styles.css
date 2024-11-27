@@ -12,6 +12,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    font-family: "roboto";
 }
 
 #header,
@@ -37,11 +38,17 @@ body {
 }
 
 #display {
-    width: 98%;
-    flex: 1 0 150px;
+    display: flex;
+    width: 90%;
+    flex: 1 0 120px;
     border-radius: 10px;
-    margin: 4px 4px;
+    margin-block: 4px;
+    padding-inline: 12px;
+    justify-content: flex-end;
+    align-items: center;
     background-color: #A8E1F5;
+    font-weight: 400;
+    font-size: 80px;
 }
 
 #buttons {
@@ -72,7 +79,6 @@ body {
     background-color: #1D0B4F;
     color: ivory;
     font-size: 40px;
-    font-family: "roboto";
 }
 
 .button.top {
