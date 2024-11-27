@@ -40,3 +40,15 @@ let num2;
 function operate(val1, oper, val2){
     return oper(val1, val2);
 }
+
+// DOM manipulation 
+/* --- below --- */
+
+const btnContainer = document.getElementById("buttons");
+
+for (i=0; i<4; i++) {
+    const buttonRow = document.createElement("div");
+    buttonRow.classList.add("rowOfButtons");
+    btnContainer.appendChild(buttonRow);
+    console.log("row appended!");
+}
