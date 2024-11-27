@@ -43,8 +43,19 @@ body {
 }
 
 #buttons {
+    display: flex;
+    flex-direction: column;
     width: 98%;
     flex: 4 0 500px;
+}
+
+.rowOfButtons {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 100px;
+    height: 25%;
+    border-radius: 10px;
+    margin-block: 4px;
 }
 
 #footer {
