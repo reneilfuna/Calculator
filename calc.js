@@ -100,20 +100,51 @@ btnContainer.addEventListener("click", (event) => {
         case "\xf7":
             console.log("DOGGY GAME I NEVER WANTED");
             break;
-        // case "C":
-        //     console.log("CLEAR THE AREA!!!");
-        // case "C":
-        //     console.log("CLEAR THE AREA!!!");
-        // case "C":
-        //     console.log("CLEAR THE AREA!!!");
-        // case "C":
-        //     console.log("CLEAR THE AREA!!!");
-        // case "C":
-        //     console.log("CLEAR THE AREA!!!");
-        // case "C":
-        //     console.log("CLEAR THE AREA!!!");
-        // case "C":
-        //     console.log("CLEAR THE AREA!!!");
+        case "7":
+            console.log("eats nines");
+            break;
+        case "8":
+            console.log("left no crumbs");
+            break;
+        case "9":
+            console.log("is how to say no in german");
+            break;
+        case "\xD7":
+            console.log("men 97 is a brilliant animated series.");
+            break;
+        case "4":
+            console.log("fant - stic");
+            break;
+        case "5":
+            console.log("alive, what happened to that?");
+            break;
+        case "6":
+            console.log("pls dont triple this");
+            break;
+        case "-":
+            console.log("my fav is proabably jollibee tbh");
+            break;
+        case "1":
+            console.log("obi - kenobi");
+            break;
+        case "2":
+            console.log("much information buddy");
+            break;
+        case "3":
+            console.log("up the mandem even tho they stabbed like 3 guys");
+            break;
+        case "+":
+            console.log("my fav ed sheeran album lol");
+            break;
+        case "0":
+            console.log("reasons to not try");
+            break;
+        case ".":
+            console.log("mr k - is cooking");
+            break;
+        case "=":
+            console.log("fight for equality");
+            break;
     }
 });                                                               
         
