@@ -38,7 +38,19 @@ let num2;
 // operator on the two numbers
 
 function operate(val1, oper, val2){
-    return oper(val1, val2);
+    console.log(`Im operate, i received ${val1} and ${val2} and ${oper}`)
+    switch (oper){
+        case "+":
+            result = add(+val1, +val2);
+            console.log(`THe result is... ${result}`)
+            return result;
+        case "-":
+            return subtract(val1, val2);
+        case "\xf7":
+            return divide(val1, val2);
+        case "\xD7":
+            return multiply(val1, val2);
+    }
 }
 
 // DOM manipulation 
@@ -104,6 +116,13 @@ function inputNum(input){
 function storeOper(input, oper){
     num1 = input;
     operator = oper;
+    console.log(`Num1: ${num1} oper: ${operator}`)
+    display.textContent = "0";
+}
+
+function callOper(input){
+    console.log(`num1: ${num1}, oper: ${operator} num2: ${input}`)
+    return operate(num1, operator, input);
 }
 
 btnContainer.addEventListener("click", (event) => {
@@ -128,6 +147,10 @@ btnContainer.addEventListener("click", (event) => {
             console.log("fight for equality");
             // Store val2
             // Call oper function
+            fetch = display.textContent
+            result = callOper(fetch);
+            console.log(`THe result is ${result}`);
+            display.textContent = result;
             break;
         case ".":
             console.log("mr k - is cooking");
