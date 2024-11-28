@@ -88,7 +88,7 @@ for(i=0; i<buttonList.length; i++){
 
 const display = document.getElementById("display");
 
-function calcInput(input){
+function inputNum(input){
     // Prevent overflow
     if (!(display.textContent.length == 9)){
         if (input == "0"){
@@ -105,6 +105,8 @@ btnContainer.addEventListener("click", (event) => {
     switch (target.textContent){
         case "+":
             console.log("my fav ed sheeran album lol");
+            // Store val1 
+            // Store operator
             break;    
         case "-":
             console.log("my fav is proabably jollibee tbh");
@@ -117,49 +119,51 @@ btnContainer.addEventListener("click", (event) => {
             break;
         case "=":
             console.log("fight for equality");
+            // Store val2
+            // Call oper function
             break;
         case ".":
             console.log("mr k - is cooking");
             break;
         case "0":
             console.log("reasons to not try");
-            calcInput("0");
+            inputNum("0");
             break;       
         case "1":
             console.log("obi - kenobi");
-            calcInput("1");
+            inputNum("1");
             break;
         case "2":
             console.log("much information buddy");
-            calcInput("2");
+            inputNum("2");
             break;
         case "3":
             console.log("up the mandem even tho they stabbed like 3 guys");
-            calcInput("3");
+            inputNum("3");
             break;
         case "4":
             console.log("fant - stic");
-            calcInput("4");
+            inputNum("4");
             break;
         case "5":
             console.log("alive, what happened to that?");
-            calcInput("5");
+            inputNum("5");
             break;
         case "6":
             console.log("pls dont triple this");
-            calcInput("6");
+            inputNum("6");
             break;
         case "7":
             console.log("eats nines");
-            calcInput("7");
+            inputNum("7");
             break;
         case "8":
             console.log("left no crumbs");
-            calcInput("8");
+            inputNum("8");
             break;
         case "9":
             console.log("is how to say no in german");
-            calcInput("9");
+            inputNum("9");
             break;
         case "C":
             console.log("CLEAR THE AREA!!!");
