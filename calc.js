@@ -100,6 +100,12 @@ function inputNum(input){
     }
 }
 
+// Function stores the first value and the operator
+function storeOper(input, oper){
+    num1 = input;
+    operator = oper;
+}
+
 btnContainer.addEventListener("click", (event) => {
     let target = event.target;
     switch (target.textContent){
@@ -107,6 +113,7 @@ btnContainer.addEventListener("click", (event) => {
             console.log("my fav ed sheeran album lol");
             // Store val1 
             // Store operator
+            storeOper((display.textContent), "+")
             break;    
         case "-":
             console.log("my fav is proabably jollibee tbh");
