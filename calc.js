@@ -89,10 +89,12 @@ for(i=0; i<buttonList.length; i++){
 const display = document.getElementById("display");
 
 function calcInput(input){
+    // Prevent overflow
     if (!(display.textContent.length == 9)){
         if (input == "0"){
             if (!(display.textContent == "0")) display.textContent += "0";
         }
+        // Prevent preceding zeros
         else if (display.textContent == 0) display.textContent = input;
         else display.textContent += input;
     }
