@@ -85,6 +85,19 @@ for(i=0; i<buttonList.length; i++){
     buttonList[i].setAttribute("id", `${btnContents[i]}`)
 }
 
+
+const display = document.getElementById("display");
+
+function calcInput(input){
+    if (!(display.textContent.length == 9)){
+        if (input == "0"){
+            if (!(display.textContent == "0")) display.textContent += "0";
+        }
+        else if (display.textContent == 0) display.textContent = input;
+        else display.textContent += input;
+    }
+}
+
 btnContainer.addEventListener("click", (event) => {
     let target = event.target;
     switch (target.textContent){
@@ -108,37 +121,47 @@ btnContainer.addEventListener("click", (event) => {
             break;
         case "0":
             console.log("reasons to not try");
+            calcInput("0");
             break;       
         case "1":
             console.log("obi - kenobi");
-            
+            calcInput("1");
             break;
         case "2":
             console.log("much information buddy");
+            calcInput("2");
             break;
         case "3":
             console.log("up the mandem even tho they stabbed like 3 guys");
+            calcInput("3");
             break;
         case "4":
             console.log("fant - stic");
+            calcInput("4");
             break;
         case "5":
             console.log("alive, what happened to that?");
+            calcInput("5");
             break;
         case "6":
             console.log("pls dont triple this");
+            calcInput("6");
             break;
         case "7":
             console.log("eats nines");
+            calcInput("7");
             break;
         case "8":
             console.log("left no crumbs");
+            calcInput("8");
             break;
         case "9":
             console.log("is how to say no in german");
+            calcInput("9");
             break;
         case "C":
             console.log("CLEAR THE AREA!!!");
+            display.textContent = "0";
             break;    
         case "+/-":
             console.log("CHANGE SIGN BRO");
