@@ -38,18 +38,15 @@ let num2;
 // operator on the two numbers
 
 function operate(val1, oper, val2){
-    console.log(`Im operate, i received ${val1} and ${val2} and ${oper}`)
     switch (oper){
         case "+":
-            result = add(+val1, +val2);
-            console.log(`THe result is... ${result}`)
-            return result;
+            return add(+val1, +val2);
         case "-":
-            return subtract(val1, val2);
+            return subtract(+val1, +val2);
         case "\xf7":
-            return divide(val1, val2);
+            return divide(+val1, +val2);
         case "\xD7":
-            return multiply(val1, val2);
+            return multiply(+val1, +val2);
     }
 }
 
@@ -114,24 +111,24 @@ function inputNum(input){
 
 // Function stores the first value and the operator
 function storeOper(input, oper){
+    // Store val1 
+    // Store operator
     num1 = input;
     operator = oper;
     console.log(`Num1: ${num1} oper: ${operator}`)
+    // Clear display
     display.textContent = "0";
 }
 
-function callOper(input){
-    console.log(`num1: ${num1}, oper: ${operator} num2: ${input}`)
-    return operate(num1, operator, input);
-}
+// function callOper(input){
+//     console.log(`num1: ${num1}, oper: ${operator} num2: ${input}`)
+//     return operate(num1, operator, input);
+// }
 
 btnContainer.addEventListener("click", (event) => {
     let target = event.target;
     switch (target.textContent){
         case "+":
-            console.log("my fav ed sheeran album lol");
-            // Store val1 
-            // Store operator
             storeOper((display.textContent), "+")
             break;    
         case "-":
@@ -144,59 +141,54 @@ btnContainer.addEventListener("click", (event) => {
             console.log("men 97 is a brilliant animated series.");
             break;
         case "=":
-            console.log("fight for equality");
-            // Store val2
-            // Call oper function
-            fetch = display.textContent
-            result = callOper(fetch);
-            console.log(`THe result is ${result}`);
-            display.textContent = result;
+            // Call operate function
+            display.textContent = operate(num1, operator, display.textContent);
             break;
         case ".":
             console.log("mr k - is cooking");
             break;
         case "0":
-            console.log("reasons to not try");
+            console.log("0");
             inputNum("0");
             break;       
         case "1":
-            console.log("obi - kenobi");
+            console.log("1");
             inputNum("1");
             break;
         case "2":
-            console.log("much information buddy");
+            console.log("2");
             inputNum("2");
             break;
         case "3":
-            console.log("up the mandem even tho they stabbed like 3 guys");
+            console.log("3");
             inputNum("3");
             break;
         case "4":
-            console.log("fant - stic");
+            console.log("4");
             inputNum("4");
             break;
         case "5":
-            console.log("alive, what happened to that?");
+            console.log("5");
             inputNum("5");
             break;
         case "6":
-            console.log("pls dont triple this");
+            console.log("6");
             inputNum("6");
             break;
         case "7":
-            console.log("eats nines");
+            console.log("7");
             inputNum("7");
             break;
         case "8":
-            console.log("left no crumbs");
+            console.log("8");
             inputNum("8");
             break;
         case "9":
-            console.log("is how to say no in german");
+            console.log("");
             inputNum("9");
             break;
         case "C":
-            console.log("CLEAR THE AREA!!!");
+            console.log("0");
             display.textContent = "0";
             break;    
         case "+/-":
