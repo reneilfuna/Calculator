@@ -88,29 +88,36 @@ for(i=0; i<buttonList.length; i++){
 btnContainer.addEventListener("click", (event) => {
     let target = event.target;
     switch (target.textContent){
-        case "C":
-            console.log("CLEAR THE AREA!!!");
-            break;
-        case "+/-":
-            console.log("CHANGE SIGN BRO");
-            break;
-        case "%":
-            console.log("ALL ABOUT THE PERCENTAGES");
+        case "+":
+            console.log("my fav ed sheeran album lol");
+            break;    
+        case "-":
+            console.log("my fav is proabably jollibee tbh");
             break;
         case "\xf7":
             console.log("DOGGY GAME I NEVER WANTED");
             break;
-        case "7":
-            console.log("eats nines");
-            break;
-        case "8":
-            console.log("left no crumbs");
-            break;
-        case "9":
-            console.log("is how to say no in german");
-            break;
         case "\xD7":
             console.log("men 97 is a brilliant animated series.");
+            break;
+        case "=":
+            console.log("fight for equality");
+            break;
+        case ".":
+            console.log("mr k - is cooking");
+            break;
+        case "0":
+            console.log("reasons to not try");
+            break;       
+        case "1":
+            console.log("obi - kenobi");
+            
+            break;
+        case "2":
+            console.log("much information buddy");
+            break;
+        case "3":
+            console.log("up the mandem even tho they stabbed like 3 guys");
             break;
         case "4":
             console.log("fant - stic");
@@ -121,30 +128,24 @@ btnContainer.addEventListener("click", (event) => {
         case "6":
             console.log("pls dont triple this");
             break;
-        case "-":
-            console.log("my fav is proabably jollibee tbh");
+        case "7":
+            console.log("eats nines");
             break;
-        case "1":
-            console.log("obi - kenobi");
+        case "8":
+            console.log("left no crumbs");
             break;
-        case "2":
-            console.log("much information buddy");
+        case "9":
+            console.log("is how to say no in german");
             break;
-        case "3":
-            console.log("up the mandem even tho they stabbed like 3 guys");
+        case "C":
+            console.log("CLEAR THE AREA!!!");
+            break;    
+        case "+/-":
+            console.log("CHANGE SIGN BRO");
             break;
-        case "+":
-            console.log("my fav ed sheeran album lol");
-            break;
-        case "0":
-            console.log("reasons to not try");
-            break;
-        case ".":
-            console.log("mr k - is cooking");
-            break;
-        case "=":
-            console.log("fight for equality");
-            break;
+        case "%":
+            console.log("ALL ABOUT THE PERCENTAGES");
+            break;    
     }
 });                                                               
         
