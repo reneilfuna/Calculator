@@ -72,10 +72,25 @@ function numberHandler(number){
 }
 
 function operatorHandler(operator){
+
+    // Case 1: no operator stored
+    // store operator
+    // store current display in num1
+    
+    // Case 2: operator called in chain of calculations
+    // i.e. "5" "+" "5" "+" "5" "+" "5"
+
+    // Case 3: operator called after single calculation
+    // i.e. "5" "+" "5" "=" "+" "7" "="
     return;
 }
 
 function altHandler(button){
+    // Case handler
+    // "C"
+    // "="
+    // "%"
+    // "+/-"
     return;
 }
 
