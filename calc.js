@@ -71,16 +71,24 @@ function numberHandler(number){
     }
 }
 
+function operatorHandler(operator){
+    return;
+}
+
+function altHandler(button){
+    return;
+}
+
 btnContainer.addEventListener("click", (event) => {
     let target = event.target;
     if (target.className.includes("number")){
-        numberHandler(target.textContent)
+        numberHandler(target.textContent);
     }
     else if(target.className.includes("operator")){
-        console.log("le noomber jacks");
+        operatorHandler(target.textContent);
     }
     else if (target.className.includes("alt")){
-        console.log("youve gut a moostash")
+        altHandler(target.textContent);
     }
 });                                                               
         
