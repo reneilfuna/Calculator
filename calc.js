@@ -63,8 +63,8 @@ function numberHandler(number){
         // First digit 
         if (display.textContent == "0" && number != 0){
             display.textContent = number;
-        } // Succeeding digits
-        else {
+        } // Succeeding digits, preventing preceding zeros
+        else if (display.textContent != "0"){
             display.textContent += number;
         }
         
@@ -76,22 +76,29 @@ function operatorHandler(operator){
     // Case 1: no operator stored
     // store operator
     // store current display in num1
+
+    // Case 2: operator input immediately after operator
     
-    // Case 2: operator called in chain of calculations
+    // Case 3: operator called in chain of calculations
     // i.e. "5" "+" "5" "+" "5" "+" "5"
 
-    // Case 3: operator called after single calculation
+    // Case 4: operator called after single calculation
     // i.e. "5" "+" "5" "=" "+" "7" "="
     return;
 }
 
 function altHandler(button){
     // Case handler
-    // "C"
+    if (button == "C"){
+        // Reset display and clear memory
+        display.textContent = "0"
+        num1 = undefined;
+        num2 = undefined;
+        operator = undefined;
+    }
     // "="
     // "%"
     // "+/-"
-    return;
 }
 
 btnContainer.addEventListener("click", (event) => {
