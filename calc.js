@@ -55,44 +55,44 @@ function operate(val1, oper, val2){
 
 const btnContainer = document.getElementById("buttons");
 
-for (i=0; i<5; i++) {
-    const buttonRow = document.createElement("div");
-    buttonRow.classList.add("rowOfButtons");
+// for (i=0; i<5; i++) {
+//     const buttonRow = document.createElement("div");
+//     buttonRow.classList.add("rowOfButtons");
 
-    if (i==4){
-        for(j=0; j<3; j++){
-            const btn = document.createElement("div");
-            btn.classList.add("button");
-            if (j==0) btn.classList.add("zero");
-            if (j==2) btn.classList.add("end");
-            buttonRow.appendChild(btn);
-        }
-    }
-    else {
-        for (j=0; j<4; j++){
-            const btn = document.createElement("div");
-            btn.classList.add("button");
-            if (j==3) btn.classList.add("end");
-            else if (i==0)btn.classList.add("top");
-            buttonRow.appendChild(btn);
-        }
-    }
-    btnContainer.appendChild(buttonRow);
-    console.log("row appended!");
-}
+//     if (i==4){
+//         for(j=0; j<3; j++){
+//             const btn = document.createElement("div");
+//             btn.classList.add("button");
+//             if (j==0) btn.classList.add("zero");
+//             if (j==2) btn.classList.add("end");
+//             buttonRow.appendChild(btn);
+//         }
+//     }
+//     else {
+//         for (j=0; j<4; j++){
+//             const btn = document.createElement("div");
+//             btn.classList.add("button");
+//             if (j==3) btn.classList.add("end");
+//             else if (i==0)btn.classList.add("top");
+//             buttonRow.appendChild(btn);
+//         }
+//     }
+//     btnContainer.appendChild(buttonRow);
+//     console.log("row appended!");
+// }
 
-const btnContents = ["C", "+/-", "%", "\xf7",
-    "7", "8", "9", "\xD7",
-    "4", "5", "6", "-",
-    "1", "2", "3", "+",
-    "0", ".", "="
-];
+// const btnContents = ["C", "+/-", "%", "\xf7",
+//     "7", "8", "9", "\xD7",
+//     "4", "5", "6", "-",
+//     "1", "2", "3", "+",
+//     "0", ".", "="
+// ];
 
-const buttonList = document.querySelectorAll(".button");
-for(i=0; i<buttonList.length; i++){
-    buttonList[i].textContent = btnContents[i];
-    buttonList[i].setAttribute("id", `${btnContents[i]}`)
-}
+// const buttonList = document.querySelectorAll(".button");
+// for(i=0; i<buttonList.length; i++){
+//     buttonList[i].textContent = btnContents[i];
+//     buttonList[i].setAttribute("id", `${btnContents[i]}`)
+// }
 
 
 const display = document.getElementById("display");
