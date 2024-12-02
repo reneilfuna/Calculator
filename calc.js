@@ -50,9 +50,6 @@ function operate(val1, oper, val2){
     }
 }
 
-// DOM manipulation 
-/* --- below --- */
-
 const btnContainer = document.getElementById("buttons");
 
 const display = document.getElementById("display");
@@ -67,16 +64,18 @@ function numberHandler(number){
         else if (display.textContent != "0"){
             display.textContent += number;
         }
-        
     }
 }
 
-function operatorHandler(operator){
+function operatorHandler(oper){
 
     // Case 1: no operator stored
-    // store operator
-    // store current display in num1
-
+    if (!num1 && !operator){
+        // store current display in num1
+        num1 = display.textContent;
+        // store operator
+        operator = oper;
+    }
     // Case 2: operator input immediately after operator
     
     // Case 3: operator called in chain of calculations
