@@ -33,6 +33,8 @@ function divide(val1, val2){
 let num1;
 let operator;
 let num2;
+// Boolean value to check whether to clear display
+let afterOper;
 
 // Operate function takes an operator, two numbers and calls the 
 // operator on the two numbers
@@ -75,9 +77,11 @@ function operatorHandler(oper){
         num1 = display.textContent;
         // store operator
         operator = oper;
+        afterOper = true;
+    } // Case 2: operator input immediately after operator
+    else if(sisenor){
+
     }
-    // Case 2: operator input immediately after operator
-    
     // Case 3: operator called in chain of calculations
     // i.e. "5" "+" "5" "+" "5" "+" "5"
 
@@ -88,14 +92,20 @@ function operatorHandler(oper){
 
 function altHandler(button){
     // Case handler
-    if (button == "C"){
-        // Reset display and clear memory
-        display.textContent = "0"
-        num1 = undefined;
-        num2 = undefined;
-        operator = undefined;
+    // if (button == "C"){
+    // }
+    switch (button){
+        case "C":
+            // Reset display and clear memory
+            display.textContent = "0"
+            num1 = undefined;
+            num2 = undefined;
+            operator = undefined;    
+            break;
+        case "=":
+            operate(num1, oper, display.textContent);
     }
-    // "="
+    
     // "%"
     // "+/-"
 }
