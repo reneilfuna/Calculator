@@ -1,22 +1,71 @@
+// Create round function 
+function roundDisplay(value){
+    if (value > 999999999) return parseFloat(999999999);
+    else if (value < -99999999) return parseFloat(-99999999);
+    else if (!(value.toString()).includes(".")) return value;
+    else if(!((value.toString()).includes("-"))){
+        let valued = value.toString();
+        // Positive numbers up to 9 digits
+        // - 1 for decimals
+        let MAXLENGTH = 8;
+        integerPart = valued.split(".")[0];
+        decimalPart = valued.split(".")[1];
+        if (integerPart.length >= MAXLENGTH) {
+            return parseInt(integerPart.substring(0, MAXLENGTH)); // No decimals allowed
+        }
+        else {
+            MAXLENGTH -= integerPart.length;
+            if (decimalPart.length > MAXLENGTH) {
+                decimalPart = decimalPart.substring(0, MAXLENGTH); // Trim decimal part
+            }
+    
+            // Reconstruct the rounded number
+            return parseFloat(integerPart + "." + decimalPart);
+        }
+    }
+    else {
+        console.log("expected")
+        // Negative numbers up to 8 digits
+        // - 1 for decimals
+        let valued = value.toString();
+        let MAXLENGTH = 7;
+        integerPart = valued.split(".")[0];
+        decimalPart = valued.split(".")[1];
+        if (integerPart.length >= MAXLENGTH) {
+            console.log("unexpected1")
+            return parseInt(integerPart.substring(0, MAXLENGTH)); // No decimals allowed
+        }
+        else {
+            MAXLENGTH -= integerPart.length;
+            if (decimalPart.length > MAXLENGTH) {
+                decimalPart = decimalPart.substring(0, MAXLENGTH); // Trim decimal part
+            }
+    
+            // Reconstruct the rounded number
+            return parseFloat(integerPart + "." + decimalPart);
+        }
+    }
+    return result
+}
 
 // Create add function
 function add(val1, val2){
     if (typeof(val1) != "number" || typeof(val2) != "number")
         return "Error";
-    else return (val1 + val2);
+    else return roundDisplay(parseFloat(val1) + parseFloat(val2));
 }
 
 // Create subtract function
 function subtract(val1, val2){
     if (typeof(val1) != "number" || typeof(val2) != "number")
         return "Error";
-    else return (val1 - val2);
+    else return roundDisplay(parseFloat(val1) - parseFloat(val2));
 }
 // Create multiply function
 function multiply(val1, val2){
     if (typeof(val1) != "number" || typeof(val2) != "number")
         return "Error";
-    else return (val1 * val2);
+    else return roundDisplay(parseFloat(val1) * parseFloat(val2));
 }
 
 // Create divide function
@@ -24,7 +73,7 @@ function divide(val1, val2){
     if (typeof(val1) != "number" || typeof(val2) != "number")
         return "Error";
     else if (val2 == 0) return "jokeman";
-    else return (val1 / val2);
+    else return roundDisplay(parseFloat(val1) / parseFloat(val2));
 }
 
 // Calculator function consists of a number, an operator and 
@@ -65,10 +114,14 @@ function numberHandler(number){
     if (!(display.textContent.length == 9)){
             // First digit
             if (afterOper){
-                display.textContent = number;
+                if (number == ".") display.textContent = "0.";
+                else display.textContent = number;
             }
             else if (display.textContent == "0" && number != 0){
-                display.textContent = number;
+                if (number == "."){
+                    display.textContent += number;
+                }
+                else display.textContent = number;
             } // Succeeding digits, preventing preceding zeros
             else if (display.textContent != "0"){
                 if(display.textContent.includes(".") && number == "."){
