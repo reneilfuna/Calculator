@@ -57,43 +57,43 @@ const btnContainer = document.getElementById("buttons");
 const display = document.getElementById("display");
 
 function numberHandler(number){
+    console.log(`Previous input: ${number}`);
     // Prevent overflow
     if (!(display.textContent.length == 9)){
         // First digit 
-        if (display.textContent == "0" && number != 0){
+        if ((display.textContent == "0" || afterOper) && number != 0){
             display.textContent = number;
         } // Succeeding digits, preventing preceding zeros
         else if (display.textContent != "0"){
             display.textContent += number;
         }
+        afterOper = false;
     }
 }
 
 function operatorHandler(oper){
-
+    console.log(`Previous input: ${oper}`);
     // Case 1: no operator stored
     if (!num1 && !operator){
         // store current display in num1
         num1 = display.textContent;
         // store operator
         operator = oper;
-        afterOper = true;
     } // Case 2: operator input immediately after operator
-    else if(sisenor){
-
+    else if(operator && num2){
+        operator = oper;
     }
     // Case 3: operator called in chain of calculations
     // i.e. "5" "+" "5" "+" "5" "+" "5"
 
     // Case 4: operator called after single calculation
     // i.e. "5" "+" "5" "=" "+" "7" "="
-    return;
+    afterOper = true;
 }
 
 function altHandler(button){
     // Case handler
-    // if (button == "C"){
-    // }
+    console.log(`Previous input: ${button}`);
     switch (button){
         case "C":
             // Reset display and clear memory
@@ -103,7 +103,11 @@ function altHandler(button){
             operator = undefined;    
             break;
         case "=":
-            operate(num1, oper, display.textContent);
+            if (!num2){
+                result = operate(num1, operator, display.textContent);
+                display.textContent = result;
+            }
+            else display.textContent = operate(num1, operator, num2);
     }
     
     // "%"
