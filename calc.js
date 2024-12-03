@@ -35,6 +35,8 @@ let operator;
 let num2;
 // Boolean value to check whether to clear display
 let afterOper;
+// Boolean value for edge case
+let afterEquals;
 
 // Operate function takes an operator, two numbers and calls the 
 // operator on the two numbers
@@ -68,6 +70,7 @@ function numberHandler(number){
             display.textContent += number;
         }
         afterOper = false;
+        afterEquals = false;
     }
 }
 
@@ -88,9 +91,12 @@ function operatorHandler(oper){
         display.textContent = operate(num1, operator, num2);
         num1 = display.textContent;
         operator = oper;
+    } // Case 4: operator called after single calculation
+    else if(afterEquals){ // i.e. "5" "+" "5" "=" "+" "7" "="
+        
     }
-    // Case 4: operator called after single calculation
-    // i.e. "5" "+" "5" "=" "+" "7" "="
+
+    afterEquals = false;
     afterOper = true;
 }
 
@@ -104,6 +110,8 @@ function altHandler(button){
             num1 = undefined;
             num2 = undefined;
             operator = undefined;    
+            afterEquals = undefined;
+            afterOper = undefined;
             break;
         case "=":
             if (!num2){
@@ -111,6 +119,9 @@ function altHandler(button){
                 display.textContent = result;
             }
             else display.textContent = operate(num1, operator, num2);
+            afterEquals = true;
+            afterOper = false;
+            break;
     }
     
     // "%"
