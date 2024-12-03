@@ -80,7 +80,7 @@ function operatorHandler(oper){
         // store operator
         operator = oper;
     } // Case 2: operator input immediately after operator
-    else if(operator && num2){
+    else if(operator && !num2){
         operator = oper;
     }
     // Case 3: operator called in chain of calculations
