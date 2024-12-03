@@ -63,16 +63,21 @@ function numberHandler(number){
     console.log(`Previous input: ${number}`);
     // Prevent overflow
     if (!(display.textContent.length == 9)){
-        // First digit 
-        if (afterOper){
-            display.textContent = number;
-        }
-        else if (display.textContent == "0" && number != 0){
-            display.textContent = number;
-        } // Succeeding digits, preventing preceding zeros
-        else if (display.textContent != "0"){
-            display.textContent += number;
-        }
+            // First digit
+            if (afterOper){
+                display.textContent = number;
+            }
+            else if (display.textContent == "0" && number != 0){
+                display.textContent = number;
+            } // Succeeding digits, preventing preceding zeros
+            else if (display.textContent != "0"){
+                if(display.textContent.includes(".") && number == "."){
+                    afterOper = false;
+                    afterEquals = false;
+                    return;
+                }
+                display.textContent += number;
+            }
         afterOper = false;
         afterEquals = false;
     }
