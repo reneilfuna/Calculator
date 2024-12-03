@@ -80,12 +80,15 @@ function operatorHandler(oper){
         // store operator
         operator = oper;
     } // Case 2: operator input immediately after operator
-    else if(operator && !num2){
+    else if(afterOper){
+        operator = oper;
+    } // Case 3: operator called in chain of calculations
+    else if(num1 && operator){ // i.e. "5" "+" "5" "+" "5" "+" "5"
+        num2 = display.textContent;
+        display.textContent = operate(num1, operator, num2);
+        num1 = display.textContent;
         operator = oper;
     }
-    // Case 3: operator called in chain of calculations
-    // i.e. "5" "+" "5" "+" "5" "+" "5"
-
     // Case 4: operator called after single calculation
     // i.e. "5" "+" "5" "=" "+" "7" "="
     afterOper = true;
