@@ -135,7 +135,6 @@ function altHandler(button){
     }
     
     // "%"
-    // "+/-"
 }
 
 btnContainer.addEventListener("click", (event) => {
