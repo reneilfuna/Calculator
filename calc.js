@@ -76,8 +76,8 @@ function numberHandler(number){
 
 function operatorHandler(oper){
     console.log(`Previous input: ${oper}`);
-    // Case 1: no operator stored
-    if (!num1 && !operator){
+    // Case 1: no operator stored & Case 4: operator called after single calculation
+    if ((!num1 && !operator) || afterEquals){
         // store current display in num1
         num1 = display.textContent;
         // store operator
@@ -91,13 +91,10 @@ function operatorHandler(oper){
         display.textContent = operate(num1, operator, num2);
         num1 = display.textContent;
         operator = oper;
-    } // Case 4: operator called after single calculation
-    else if(afterEquals){ // i.e. "5" "+" "5" "=" "+" "7" "="
-        
-    }
+    } 
 
-    afterEquals = false;
     afterOper = true;
+    afterEquals = false;
 }
 
 function altHandler(button){
@@ -119,6 +116,7 @@ function altHandler(button){
                 display.textContent = result;
             }
             else display.textContent = operate(num1, operator, num2);
+
             afterEquals = true;
             afterOper = false;
             break;
