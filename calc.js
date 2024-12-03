@@ -120,6 +120,18 @@ function altHandler(button){
             afterEquals = true;
             afterOper = false;
             break;
+        case "+/-":
+            if (display.textContent != 0){
+                if (display.textContent.includes("-")){
+                    value = display.textContent
+                    display.textContent = value.replace("-", "");
+                }
+                else{
+                    value = display.textContent;
+                    display.textContent = "-" + value;
+                }
+            }
+            break;
     }
     
     // "%"
