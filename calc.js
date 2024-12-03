@@ -48,7 +48,8 @@ function operate(val1, oper, val2){
         case "-":
             return subtract(+val1, +val2);
         case "\xf7":
-            return divide(+val1, +val2);
+            if (val2 == 0) return "jokeman.";
+            else return divide(+val1, +val2);
         case "\xD7":
             return multiply(+val1, +val2);
     }
@@ -63,7 +64,10 @@ function numberHandler(number){
     // Prevent overflow
     if (!(display.textContent.length == 9)){
         // First digit 
-        if ((display.textContent == "0" || afterOper) && number != 0){
+        if (afterOper){
+            display.textContent = number;
+        }
+        else if (display.textContent == "0" && number != 0){
             display.textContent = number;
         } // Succeeding digits, preventing preceding zeros
         else if (display.textContent != "0"){
