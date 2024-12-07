@@ -1,51 +1,34 @@
 // Create round function 
 function roundDisplay(value){
-    if (value > 999999999) return parseFloat(999999999);
-    else if (value < -99999999) return parseFloat(-99999999);
+    const MAX_VALUE = 999999999;
+    const MIN_VALUE = -99999999;
+
+    // Keep value within intended range, 
+    // display max/min value if outside
+    // Return value is inside range and not decimal
+    if (value > MAX_VALUE) return MAX_VALUE;
+    else if (value < MIN_VALUE) return MIN_VALUE;
     else if (!(value.toString()).includes(".")) return value;
-    else if(!((value.toString()).includes("-"))){
-        let valued = value.toString();
-        // Positive numbers up to 9 digits
-        // but decimal takes length of 1
-        let MAXLENGTH = 8;
-        integerPart = valued.split(".")[0];
-        decimalPart = valued.split(".")[1];
-        if (integerPart.length >= MAXLENGTH) {
-            return parseInt(integerPart.substring(0, MAXLENGTH)); // No decimals allowed
-        }
-        else {
-            MAXLENGTH -= integerPart.length;
-            if (decimalPart.length > MAXLENGTH) {
-                decimalPart = decimalPart.substring(0, MAXLENGTH); // Trim decimal part
-            }
-    
-            // Reconstruct the rounded number
-            return parseFloat(integerPart + "." + decimalPart);
-        }
+
+    let valued = value.toString();
+    // Numbers up to 9 digits
+    // but decimal takes length of 1
+    let MAXLENGTH = 8;
+    integerPart = valued.split(".")[0];
+    decimalPart = valued.split(".")[1];
+
+    if (integerPart.length == MAXLENGTH) {
+        return parseInt(integerPart.substring(0, MAXLENGTH)); // No decimals allowed
     }
     else {
-        console.log("expected")
-        // Negative numbers up to 8 digits
-        // - 1 for decimals
-        let valued = value.toString();
-        let MAXLENGTH = 7;
-        integerPart = valued.split(".")[0];
-        decimalPart = valued.split(".")[1];
-        if (integerPart.length >= MAXLENGTH) {
-            console.log("unexpected1")
-            return parseInt(integerPart.substring(0, MAXLENGTH)); // No decimals allowed
+        MAXLENGTH -= integerPart.length;
+        if (decimalPart.length > MAXLENGTH) {
+            decimalPart = decimalPart.substring(0, MAXLENGTH); // Trim decimal part
         }
-        else {
-            MAXLENGTH -= integerPart.length;
-            if (decimalPart.length > MAXLENGTH) {
-                decimalPart = decimalPart.substring(0, MAXLENGTH); // Trim decimal part
-            }
     
-            // Reconstruct the rounded number
-            return parseFloat(integerPart + "." + decimalPart);
-        }
+     // Reconstruct the rounded number
+        return parseFloat(integerPart + "." + decimalPart);
     }
-    return result
 }
 
 // Create add function
