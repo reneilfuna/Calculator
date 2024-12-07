@@ -213,4 +213,14 @@ btnContainer.addEventListener("click", (event) => {
         altHandler(target.textContent);
     }
 });                                                               
-        
+
+// Keyboard event delegation
+
+window.addEventListener("keydown", (event) => {
+    let key = event.key;
+    console.log(`You have just pressed ${typeof(key)}`)
+    set = ["0","1","2","3","4","5","6","7","8","9"];
+    if (set.includes(key)){
+        numberHandler(key);
+    }
+});
