@@ -111,7 +111,7 @@ const display = document.getElementById("display");
 function numberHandler(number){
     console.log(`Previous input: ${number}`);
     // Prevent overflow
-    if (!(display.textContent.length == 9)){
+    if (!(display.textContent.length > 9)){
             // First digit
             if (afterOper){
                 if (number == ".") display.textContent = "0.";
