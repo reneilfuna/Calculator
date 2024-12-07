@@ -194,9 +194,10 @@ function altHandler(button){
                 }
             }
             break;
+        case "%":
+            console.log("all about the percentages")
+            break;
     }
-    
-    // "%"
 }
 
 btnContainer.addEventListener("click", (event) => {
