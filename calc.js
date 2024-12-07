@@ -195,7 +195,8 @@ function altHandler(button){
             }
             break;
         case "%":
-            console.log("all about the percentages")
+            // Converts the current display value into percentage multiplier
+            display.textContent /= 100;
             break;
     }
 }
