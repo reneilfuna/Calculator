@@ -6,7 +6,7 @@ function roundDisplay(value){
     else if(!((value.toString()).includes("-"))){
         let valued = value.toString();
         // Positive numbers up to 9 digits
-        // - 1 for decimals
+        // but decimal takes length of 1
         let MAXLENGTH = 8;
         integerPart = valued.split(".")[0];
         decimalPart = valued.split(".")[1];
