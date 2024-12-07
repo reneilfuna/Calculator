@@ -99,7 +99,12 @@ function operate(val1, oper, val2){
         case "\xf7":
             if (val2 == 0) return "jokeman.";
             else return divide(+val1, +val2);
+        case "/":
+            if (val2 == 0) return "jokeman.";
+            else return divide(+val1, +val2);
         case "\xD7":
+            return multiply(+val1, +val2);
+        case "*":
             return multiply(+val1, +val2);
     }
 }
@@ -163,11 +168,15 @@ function operatorHandler(oper){
 
     afterOper = true;
     afterEquals = false;
+    console.log(`current state: ${num1}, ${operator}, ${num2}`)
 }
 
 function altHandler(button){
     // Case handler
     console.log(`Previous input: ${button}`);
+    if (button == "c"){
+        button = "C";
+    }
     switch (button){
         case "C":
             // Reset display and clear memory
@@ -202,7 +211,8 @@ function altHandler(button){
             break;
         case "%":
             // Converts the current display value into percentage multiplier
-            display.textContent /= 100;
+            currVal = display.textContent;
+            display.textContent = roundDisplay(currVal/100);
             break;
     }
 }
@@ -225,8 +235,11 @@ btnContainer.addEventListener("click", (event) => {
 window.addEventListener("keydown", (event) => {
     let key = event.key;
     console.log(`You have just pressed ${key}`)
-    numbers = ["0","1","2","3","4","5","6","7","8","9","."];
-    if (numbers.includes(key)){
-        numberHandler(key);
-    }
+    let numbers = ["0","1","2","3","4","5","6","7","8","9","."];
+    let operators = ["+", "-", "*", "/"];
+    let alts = ["=", "%", "C", "c"];
+    if (numbers.includes(key)) numberHandler(key);
+    else if (operators.includes(key)) operatorHandler(key);
+    else if (alts.includes(key)) altHandler(key);
+
 });
