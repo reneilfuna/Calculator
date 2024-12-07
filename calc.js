@@ -110,14 +110,19 @@ const display = document.getElementById("display");
 
 function numberHandler(number){
     console.log(`Previous input: ${number}`);
-    // Prevent overflow
-    if (!(display.textContent.length > 9)){
-            // First digit
-            if (afterOper){
-                if (number == ".") display.textContent = "0.";
-                else display.textContent = number;
-            }
-            else if (display.textContent == "0" && number != 0){
+    // First digit
+    if (afterOper){
+        if (number == ".") display.textContent = "0.";
+        else{
+            display.textContent = number;
+            afterOper = false;
+            afterEquals = false;
+        }
+    }
+    else{
+        // Prevent overflow
+        if (!(display.textContent.length >= 9)){
+            if (display.textContent == "0" && number != 0){
                 if (number == "."){
                     display.textContent += number;
                 }
@@ -133,6 +138,7 @@ function numberHandler(number){
             }
         afterOper = false;
         afterEquals = false;
+        }
     }
 }
 
@@ -218,9 +224,9 @@ btnContainer.addEventListener("click", (event) => {
 
 window.addEventListener("keydown", (event) => {
     let key = event.key;
-    console.log(`You have just pressed ${typeof(key)}`)
-    set = ["0","1","2","3","4","5","6","7","8","9"];
-    if (set.includes(key)){
+    console.log(`You have just pressed ${key}`)
+    numbers = ["0","1","2","3","4","5","6","7","8","9","."];
+    if (numbers.includes(key)){
         numberHandler(key);
     }
 });
