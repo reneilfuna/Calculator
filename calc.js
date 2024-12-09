@@ -10,25 +10,24 @@ function roundDisplay(value){
     else if (value < MIN_VALUE) return MIN_VALUE;
     else if (!(value.toString()).includes(".")) return value;
 
-    let valued = value.toString();
     // Numbers up to 9 digits
     // but decimal takes length of 1
     let MAXLENGTH = 8;
-    integerPart = valued.split(".")[0];
-    decimalPart = valued.split(".")[1];
+    // Split into integer and decimal halves
+    const [integerPart, decimalPart = ""] = value.toString().split(".");
 
-    if (integerPart.length == MAXLENGTH) {
+    if (integerPart.length >= MAXLENGTH) {
         return parseInt(integerPart.substring(0, MAXLENGTH)); // No decimals allowed
     }
-    else {
-        MAXLENGTH -= integerPart.length;
-        if (decimalPart.length > MAXLENGTH) {
-            decimalPart = decimalPart.substring(0, MAXLENGTH); // Trim decimal part
-        }
     
-     // Reconstruct the rounded number
-        return parseFloat(integerPart + "." + decimalPart);
-    }
+    // Calculate remaining length for after decimal point
+    const maxDecimalLength = MAXLENGTH - integerPart.length;
+    // More efficient use in slice method over substring
+    const roundedDecimal = decimalPart.slice(0, Math.max(0, maxDecimalLength));
+
+    // Reconstruct the rounded number
+    return parseFloat(integerPart + (roundedDecimal ? `.${roundedDecimal}` : ""));
+
 }
 
 // Create add function
