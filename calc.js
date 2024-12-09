@@ -30,33 +30,38 @@ function roundDisplay(value){
 
 }
 
-// Create add function
-function add(val1, val2){
-    if (typeof(val1) != "number" || typeof(val2) != "number")
-        return "Error";
-    else return roundDisplay(parseFloat(val1) + parseFloat(val2));
-}
+// // Create add function
+// function add(val1, val2){
+//     if (typeof(val1) != "number" || typeof(val2) != "number")
+//         return "Error";
+//     else return roundDisplay(parseFloat(val1) + parseFloat(val2));
+// }
 
-// Create subtract function
-function subtract(val1, val2){
-    if (typeof(val1) != "number" || typeof(val2) != "number")
-        return "Error";
-    else return roundDisplay(parseFloat(val1) - parseFloat(val2));
-}
-// Create multiply function
-function multiply(val1, val2){
-    if (typeof(val1) != "number" || typeof(val2) != "number")
-        return "Error";
-    else return roundDisplay(parseFloat(val1) * parseFloat(val2));
-}
+// // Create subtract function
+// function subtract(val1, val2){
+//     if (typeof(val1) != "number" || typeof(val2) != "number")
+//         return "Error";
+//     else return roundDisplay(parseFloat(val1) - parseFloat(val2));
+// }
+// // Create multiply function
+// function multiply(val1, val2){
+//     if (typeof(val1) != "number" || typeof(val2) != "number")
+//         return "Error";
+//     else return roundDisplay(parseFloat(val1) * parseFloat(val2));
+// }
 
-// Create divide function
-function divide(val1, val2){
-    if (typeof(val1) != "number" || typeof(val2) != "number")
-        return "Error";
-    else if (val2 == 0) return "jokeman";
-    else return roundDisplay(parseFloat(val1) / parseFloat(val2));
-}
+// // Create divide function
+// function divide(val1, val2){
+//     if (typeof(val1) != "number" || typeof(val2) != "number")
+//         return "Error";
+//     else if (val2 == 0) return "jokeman";
+//     else return roundDisplay(parseFloat(val1) / parseFloat(val2));
+// }
+
+const add = (a, b) => calculate(a, b, "+");
+const subtract = (a, b) => calculate(a, b, "-");
+const multiply = (a, b) => calculate(a, b, "*");
+const divide = (a, b) => calculate(a, b, "/");
 
 // Calculator function consists of a number, an operator and 
 // another number
