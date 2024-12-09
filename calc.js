@@ -67,31 +67,20 @@ let afterEquals;
 // operator on the two numbers
 
 function operate(val1, oper, val2){
-    // switch (oper){
-    //     case "+":
-    //         return add(+val1, +val2);
-    //     case "-":
-    //         return subtract(+val1, +val2);
-    //     case "\xf7":
-    //         if (val2 == 0) return "jokeman.";
-    //         else return divide(+val1, +val2);
-    //     case "/":
-    //         if (val2 == 0) return "jokeman.";
-    //         else return divide(+val1, +val2);
-    //     case "\xD7":
-    //         return multiply(+val1, +val2);
-    //     case "*":
-    //         return multiply(+val1, +val2);
-    // }
-const operations = {
-    "+": add, 
-    "-": subtract, 
-    "\xD7": multiply, 
-    "*": multiply, 
-    "\xf7": divide, 
-    "/": divide,
-};
+    // Operator-function mapping
+    const operations = {
+        "+": add, 
+        "-": subtract, 
+        "\xD7": multiply, 
+        "*": multiply, 
+        "\xf7": divide, 
+        "/": divide,
+    };
 
+    const operation = operations[oper];
+    if(!operation) return "Error"; // InVALID operator
+
+    return operation(parseFloat(val1), parseFloat(val2));
 }
 
 const btnContainer = document.getElementById("buttons");
@@ -173,12 +162,8 @@ function altHandler(button){
             afterOper = undefined;
             break;
         case "=":
-            if (!num2){
-                result = operate(num1, operator, display.textContent);
-                display.textContent = result;
-            }
-            else display.textContent = operate(num1, operator, num2);
-
+            result = operate(num1, operator, display.textContent);
+            display.textContent = result;
             afterEquals = true;
             afterOper = false;
             break;
