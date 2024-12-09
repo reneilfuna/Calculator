@@ -149,14 +149,8 @@ function altHandler(button){
             break;
         case "+/-":
             if (display.textContent != 0){
-                if (display.textContent.includes("-")){
-                    value = display.textContent
-                    display.textContent = value.replace("-", "");
-                }
-                else{
-                    value = display.textContent;
-                    display.textContent = "-" + value;
-                }
+                if (display.textContent.includes("-")) display.textContent = display.textContent.replace("-", "");
+                else display.textContent = "-" + display.textContent;
             }
             break;
         case "%":
