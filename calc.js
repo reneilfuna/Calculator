@@ -87,37 +87,25 @@ const btnContainer = document.getElementById("buttons");
 const display = document.getElementById("display");
 
 function numberHandler(number){
-    // console.log(`Previous input: ${number}`);
-    // // First digit
-    // if (afterOper){
-    //     if (number == ".") display.textContent = "0.";
-    //     else{
-    //         display.textContent = number;
-    //         afterOper = false;
-    //         afterEquals = false;
-    //     }
-    // }
-    // else{
-    //     // Prevent overflow
-    //     if (!(display.textContent.length >= 9)){
-    //         if (display.textContent == "0" && number != 0){
-    //             if (number == "."){
-    //                 display.textContent += number;
-    //             }
-    //             else display.textContent = number;
-    //         } // Succeeding digits, preventing preceding zeros
-    //         else if (display.textContent != "0"){
-    //             if(display.textContent.includes(".") && number == "."){
-    //                 afterOper = false;
-    //                 afterEquals = false;
-    //                 return;
-    //             }
-    //             display.textContent += number;
-    //         }
-    //     afterOper = false;
-    //     afterEquals = false;
-    //     }
-    // }
+    console.log(`Previous input: ${number}`);   
+    const displayVal = display.textContent;
+
+    // Start fresh if a new number is entered after an operation
+    if (afterOper) {
+        display.textContent = number === "." ? "0." : number;
+    }
+    else if (displayVal.length < 9){
+        // Avoid leading zeros
+        if (displayVal === "0" && number !== "."){
+            display.textContent = number;
+        } // Append valid decimal/digits
+        else if (!(displayVal.includes(".") && number === ".")){
+            display.textContent += number;
+        }
+    }
+
+    afterOper = false;
+    afterEquals = false;
 }
 
 function operatorHandler(oper){
