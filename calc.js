@@ -84,7 +84,6 @@ function operate(val1, oper, val2){
 }
 
 const btnContainer = document.getElementById("buttons");
-
 const display = document.getElementById("display");
 
 function numberHandler(number){
