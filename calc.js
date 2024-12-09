@@ -178,11 +178,8 @@ btnContainer.addEventListener("click", (event) => {
 window.addEventListener("keydown", (event) => {
     let key = event.key;
     console.log(`You have just pressed ${key}`)
-    let numbers = ["0","1","2","3","4","5","6","7","8","9","."];
-    let operators = ["+", "-", "*", "/"];
-    let alts = ["=", "%", "C", "c"];
-    if (numbers.includes(key)) numberHandler(key);
-    else if (operators.includes(key)) operatorHandler(key);
-    else if (alts.includes(key)) altHandler(key);
+    if (!isNaN(key) || key === ".") numberHandler(key);
+    else if (["+", "-", "*", "/"].includes(key)) operatorHandler(key);
+    else if (["=", "%", "C", "c"].includes(key)) altHandler(key);
 
 });
