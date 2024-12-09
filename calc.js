@@ -67,22 +67,31 @@ let afterEquals;
 // operator on the two numbers
 
 function operate(val1, oper, val2){
-    switch (oper){
-        case "+":
-            return add(+val1, +val2);
-        case "-":
-            return subtract(+val1, +val2);
-        case "\xf7":
-            if (val2 == 0) return "jokeman.";
-            else return divide(+val1, +val2);
-        case "/":
-            if (val2 == 0) return "jokeman.";
-            else return divide(+val1, +val2);
-        case "\xD7":
-            return multiply(+val1, +val2);
-        case "*":
-            return multiply(+val1, +val2);
-    }
+    // switch (oper){
+    //     case "+":
+    //         return add(+val1, +val2);
+    //     case "-":
+    //         return subtract(+val1, +val2);
+    //     case "\xf7":
+    //         if (val2 == 0) return "jokeman.";
+    //         else return divide(+val1, +val2);
+    //     case "/":
+    //         if (val2 == 0) return "jokeman.";
+    //         else return divide(+val1, +val2);
+    //     case "\xD7":
+    //         return multiply(+val1, +val2);
+    //     case "*":
+    //         return multiply(+val1, +val2);
+    // }
+const operations = {
+    "+": add, 
+    "-": subtract, 
+    "\xD7": multiply, 
+    "*": multiply, 
+    "\xf7": divide, 
+    "/": divide,
+};
+
 }
 
 const btnContainer = document.getElementById("buttons");
