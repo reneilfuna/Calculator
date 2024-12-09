@@ -161,8 +161,7 @@ function altHandler(button){
             break;
         case "%":
             // Converts the current display value into percentage multiplier
-            currVal = display.textContent;
-            display.textContent = roundDisplay(currVal/100);
+            display.textContent = roundDisplay(display.textContent/100);
             break;
     }
 }
