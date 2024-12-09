@@ -57,6 +57,22 @@ function roundDisplay(value){
 //     else if (val2 == 0) return "jokeman";
 //     else return roundDisplay(parseFloat(val1) / parseFloat(val2));
 // }
+function calculate(val1, val2, operation){
+    // Ensure all inputs are numbers
+    if (typeof val1 !== "number" || typeof val2 !== "number") return "Error";
+    // Handle division by zero
+    if (operation == "/" && val2 === 0 ) return "Jokeman."
+
+    // Perform operation
+    const result = {
+        "+": val1 + val2,
+        "-": val1 - val2,
+        "*": val1 * val2,
+        "/": val1 / val2,
+    }[operation];
+
+    return roundDisplay(result);
+}
 
 const add = (a, b) => calculate(a, b, "+");
 const subtract = (a, b) => calculate(a, b, "-");
