@@ -110,18 +110,15 @@ function numberHandler(number){
 
 function operatorHandler(oper){
     console.log(`Previous input: ${oper}`);
-    // Case 1: no operator stored & Case 4: operator called after single calculation
+    
     if ((!num1 && !operator) || afterEquals){
-        // store current display in num1
         num1 = display.textContent;
-        // store operator
-    } // Case 2: operator called in chain of calculations
+    } 
     else if(num1 && operator && !afterOper){ // i.e. "5" "+" "5" "+" "5" "+" "5"
         num2 = display.textContent;
         display.textContent = operate(num1, operator, num2);
         num1 = display.textContent;
     } 
-
     operator = oper;
     afterOper = true;
     afterEquals = false;
