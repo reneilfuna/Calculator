@@ -115,18 +115,14 @@ function operatorHandler(oper){
         // store current display in num1
         num1 = display.textContent;
         // store operator
-        operator = oper;
-    } // Case 2: operator input immediately after operator
-    else if(afterOper){
-        operator = oper;
-    } // Case 3: operator called in chain of calculations
-    else if(num1 && operator){ // i.e. "5" "+" "5" "+" "5" "+" "5"
+    } // Case 2: operator called in chain of calculations
+    else if(num1 && operator && !afterOper){ // i.e. "5" "+" "5" "+" "5" "+" "5"
         num2 = display.textContent;
         display.textContent = operate(num1, operator, num2);
         num1 = display.textContent;
-        operator = oper;
     } 
 
+    operator = oper;
     afterOper = true;
     afterEquals = false;
     console.log(`current state: ${num1}, ${operator}, ${num2}`)
